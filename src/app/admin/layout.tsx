@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { LayoutDashboard, Package, ShoppingCart, LogOut, Menu, X } from "lucide-react";
+import { LayoutDashboard, Package, ShoppingCart, LogOut, Menu, X, Home } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function AdminLayout({
@@ -72,7 +72,9 @@ export default function AdminLayout({
         `}
       >
         <div className="p-6 flex items-center justify-between">
-          <h1 className="text-xl font-bold">Admin Panel</h1>
+          <Link href="/" className="text-xl font-bold hover:text-caramel-600 transition-colors">
+            Rora Delights
+          </Link>
           <button
             onClick={() => setIsSidebarOpen(false)}
             className="p-1 rounded-lg hover:bg-cacao-900/10 lg:hidden"
@@ -82,6 +84,15 @@ export default function AdminLayout({
         </div>
 
         <nav className="mt-6">
+          {/* Bouton retour à l'accueil */}
+          <Link
+            href="/"
+            className="flex items-center gap-3 px-6 py-3 text-sm text-cacao-700 dark:text-creme-300 hover:bg-cacao-900/5 dark:hover:bg-white/5 transition-colors border-b border-cacao-900/10 dark:border-white/10 mb-2"
+          >
+            <Home className="h-4 w-4" />
+            Back to Home
+          </Link>
+
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = pathname === item.href;
@@ -102,7 +113,7 @@ export default function AdminLayout({
           })}
           <button
             onClick={handleLogout}
-            className="flex w-full items-center gap-3 px-6 py-3 text-sm text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-900/20 transition-colors"
+            className="flex w-full items-center gap-3 px-6 py-3 text-sm text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-900/20 transition-colors mt-2"
           >
             <LogOut className="h-4 w-4" />
             Logout
