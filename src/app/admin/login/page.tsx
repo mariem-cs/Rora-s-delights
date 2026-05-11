@@ -1,13 +1,10 @@
 "use client";
 
 import { useState, useTransition, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-export const dynamic = 'force-dynamic';
+import { useRouter } from "next/navigation";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const params = useSearchParams();
-  const next = params.get("next") || "/admin";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,7 +43,7 @@ export default function AdminLoginPage() {
       if (!res.ok) throw new Error(data.error || "Login failed");
       
       // Redirection après login réussi
-      router.push(next);
+      router.push("/admin");
       router.refresh();
     } catch (e) {
       setError(e instanceof Error ? e.message : "Unknown error");
