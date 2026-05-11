@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 
 import type { Product, Order } from "@/lib/types";
 
+// Définir le type pour les icônes
+type IconComponent = React.ComponentType<{ className?: string }>;
+
 interface DashboardStats {
   totalProducts: number;
   totalOrders: number;
@@ -76,7 +79,7 @@ export function AdminDashboardClient() {
     color,
     index,
   }: {
-    icon: React.ComponentType<{ className: string }>;
+    icon: IconComponent;
     label: string;
     value: string | number;
     subtext?: string;
@@ -178,7 +181,7 @@ export function AdminDashboardClient() {
           index={3}
           icon={BarChart3}
           label="Total Revenue"
-          value={`${stats.totalRevenue.toFixed(2)} €`}
+          value={`${stats.totalRevenue.toFixed(2)} DT`}
           subtext="From completed orders"
           color="rose"
         />
