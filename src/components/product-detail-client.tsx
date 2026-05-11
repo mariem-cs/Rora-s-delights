@@ -12,7 +12,6 @@ import { t } from "@/lib/i18n";
 import { useCartStore } from "@/store/cart-store";
 import { useWishlistStore } from "@/store/wishlist-store";
 import { cn } from "@/lib/cn";
-import { getProducts } from "@/lib/products";
 
 export function ProductDetailClient({ product }: { product: Product }) {
   const { locale } = useLocale();
@@ -28,8 +27,13 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
   useEffect(() => {
     const loadProducts = async () => {
-      const products = await getProducts();
-      setAllProducts(products);
+      try {
+        const response = await fetch('/api/products');
+        const data = await response.json();
+        setAllProducts(data.products);
+      } catch (error) {
+        console.error('Failed to load products:', error);
+      }
     };
     loadProducts();
   }, []);
@@ -74,7 +78,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
   const handleAddToCart = () => {
     if (!isBigSize && quantity < 5) {
-      alert(tr.locale === "fr" ? "Minimum 5 pièces pour les mini cookies" : "حد أدنى 5 قطع للميني كوكيز");
+      alert(locale === "fr" ? "Minimum 5 pièces pour les mini cookies" : "حد أدنى 5 قطع للميني كوكيز");
       return;
     }
     addToCart(currentProduct.id, quantity);
