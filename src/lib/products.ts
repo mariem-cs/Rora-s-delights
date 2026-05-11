@@ -17,6 +17,8 @@ const productSchema = z.object({
   featured: z.boolean().optional(),
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
+    order: z.number().optional()// Ajouter cette ligne
+
 });
 
 const productsSchema = z.array(productSchema);
