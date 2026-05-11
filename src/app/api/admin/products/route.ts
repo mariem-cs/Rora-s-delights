@@ -6,11 +6,17 @@ import { z } from "zod";
 import { getProducts, saveProducts } from "@/lib/products";
 import { requireAdminFromCookies } from "@/lib/admin-auth";
 
+const productSizeSchema = z.object({
+  name: z.string().min(1),
+  price: z.number().nonnegative(),
+});
+
 const productInputSchema = z.object({
   slug: z.string().min(1),
   name: z.object({ fr: z.string().min(1), ar: z.string().min(1) }),
   description: z.object({ fr: z.string().min(1), ar: z.string().min(1) }),
   price: z.number().nonnegative(),
+  sizes: z.array(productSizeSchema).optional(),
   image: z.string().min(1),
   category: z.string().min(1),
   tags: z.array(z.string()).optional(),

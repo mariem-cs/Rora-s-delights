@@ -1,5 +1,10 @@
 export type Locale = "fr" | "ar";
 
+export type ProductSize = {
+  name: string; // e.g., "Small", "Medium", "Large"
+  price: number; // in EUR
+};
+
 export type Product = {
   id: string;
   slug: string;
@@ -11,7 +16,8 @@ export type Product = {
     fr: string;
     ar: string;
   };
-  price: number; // in TND
+  price: number; // in EUR (base/default price)
+  sizes?: ProductSize[]; // Optional sizes with individual prices
   image: string; // /public path or remote
   category: string;
   tags?: string[];

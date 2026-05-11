@@ -9,33 +9,48 @@ function getSecret() {
 }
 
 async function isValidAdminToken(token: string) {
-  const { payload } = await jwtVerify(token, getSecret());
-  return payload.role === "admin";
+  try {
+    const { payload } = await jwtVerify(token, getSecret());
+    return payload.role === "admin";
+  } catch {
+    return false;
+  }
 }
 
 export async function middleware(req: NextRequest) {
   const pathname = req.nextUrl.pathname;
-  const isAdmin = pathname.startsWith("/admin") || pathname.startsWith("/api/admin");
-  if (!isAdmin) return NextResponse.next();
+  
+  // Check if this is an admin route
+  const isAdminRoute = pathname.startsWith("/admin") || pathname.startsWith("/api/admin");
+  if (!isAdminRoute) return NextResponse.next();
 
-  if (pathname.startsWith("/admin/login") || pathname.startsWith("/api/admin/login")) return NextResponse.next();
-
-  const token = req.cookies.get(COOKIE_NAME)?.value;
-  if (!token) return reject(req);
-
-  try {
-    const ok = await isValidAdminToken(token);
-    if (!ok) return reject(req);
+  // Allow login page and API without authentication
+  if (pathname === "/admin/login" || pathname === "/api/admin/login") {
     return NextResponse.next();
-  } catch {
-    return reject(req);
   }
+
+  // Check for valid token
+  const token = req.cookies.get(COOKIE_NAME)?.value;
+  if (!token) {
+    return handleUnauthorized(req);
+  }
+
+  // Verify token
+  const isValid = await isValidAdminToken(token);
+  if (!isValid) {
+    return handleUnauthorized(req);
+  }
+
+  return NextResponse.next();
 }
 
-function reject(req: NextRequest) {
+function handleUnauthorized(req: NextRequest) {
+  // For API requests, return 401
   if (req.nextUrl.pathname.startsWith("/api/")) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+
+  // For page requests, redirect to login
   const url = req.nextUrl.clone();
   url.pathname = "/admin/login";
   url.searchParams.set("next", req.nextUrl.pathname);

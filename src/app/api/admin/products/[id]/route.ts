@@ -4,12 +4,18 @@ import { z } from "zod";
 import { getProducts, saveProducts } from "@/lib/products";
 import { requireAdminFromCookies } from "@/lib/admin-auth";
 
+const productSizeSchema = z.object({
+  name: z.string().min(1),
+  price: z.number().nonnegative(),
+});
+
 const updateSchema = z
   .object({
     slug: z.string().min(1).optional(),
     name: z.object({ fr: z.string().min(1), ar: z.string().min(1) }).optional(),
     description: z.object({ fr: z.string().min(1), ar: z.string().min(1) }).optional(),
     price: z.number().nonnegative().optional(),
+    sizes: z.array(productSizeSchema).optional(),
     image: z.string().min(1).optional(),
     category: z.string().min(1).optional(),
     tags: z.array(z.string()).optional(),
