@@ -81,7 +81,7 @@
       "fr": "Big cookies Oreo croustillants et ultra gourmands.",
       "ar": "كوكيز أوريو كبيرة مقرمشة وغنية بالطعم."
     },
-    "price": 6.5,
+    "price": 7.5,
     "image": "/images/cookies/oreo.jpeg",
     "category": "Big",
     "tags": [
@@ -91,13 +91,13 @@
     "inStock": true,
     "featured": true,
     "createdAt": "2026-01-01T00:00:00.000Z",
-    "updatedAt": "2026-01-01T00:00:00.000Z"
+    "updatedAt": "2026-05-11T17:25:34.141Z"
   },
   {
     "id": "p_speculoos",
     "slug": "speculoos(big)",
     "name": {
-      "fr": "Speculoos",
+      "fr": "Speculoos(big)",
       "ar": "سبيكولوس"
     },
     "description": {
@@ -106,7 +106,7 @@
     },
     "price": 7,
     "image": "/images/cookies/specelus.jpeg",
-    "category": "Classic",
+    "category": "big",
     "tags": [
       "speculoos",
       "spicy"
@@ -114,7 +114,7 @@
     "inStock": true,
     "featured": false,
     "createdAt": "2026-01-01T00:00:00.000Z",
-    "updatedAt": "2026-01-01T00:00:00.000Z"
+    "updatedAt": "2026-05-11T17:28:51.010Z"
   },
   {
     "id": "p_chocolate_addict_big",
@@ -153,7 +153,7 @@
     },
     "price": 3.5,
     "image": "/images/cookies/fromage.jpeg",
-    "category": "Special",
+    "category": "mini",
     "tags": [
       "oreo",
       "creamy"
@@ -161,7 +161,7 @@
     "inStock": true,
     "featured": true,
     "createdAt": "2026-01-01T00:00:00.000Z",
-    "updatedAt": "2026-01-01T00:00:00.000Z"
+    "updatedAt": "2026-05-11T17:28:59.208Z"
   },
   {
     "id": "p_orange_lover",

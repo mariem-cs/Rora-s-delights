@@ -5,7 +5,8 @@ import { z } from "zod";
 
 import { getProducts, saveProducts } from "@/lib/products";
 import { requireAdminFromCookies } from "@/lib/admin-auth";
-
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 const productSizeSchema = z.object({
   name: z.string().min(1),
   price: z.number().nonnegative(),
