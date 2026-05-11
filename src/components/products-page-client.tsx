@@ -6,6 +6,7 @@ import { useLocale } from "@/components/locale-provider";
 import { t } from "@/lib/i18n";
 import { useWishlistStore } from "@/store/wishlist-store";
 import { useState } from "react";
+import { cn } from "@/lib/cn";  // ← Ajoute cette ligne
 
 type FilterType = "all" | "mini" | "big";
 
