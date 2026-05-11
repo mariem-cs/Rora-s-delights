@@ -20,44 +20,37 @@ async function isValidAdminToken(token: string) {
 export async function middleware(req: NextRequest) {
   const pathname = req.nextUrl.pathname;
   
-  // Check if this is an admin route
-  const isAdminRoute = pathname.startsWith("/admin") || pathname.startsWith("/api/admin");
-  if (!isAdminRoute) return NextResponse.next();
-
-  // Allow login page and API without authentication
+  // IMPORTANT: Exclure complètement la page de login et l'API login
   if (pathname === "/admin/login" || pathname === "/api/admin/login") {
     return NextResponse.next();
   }
-
-  // Check for valid token
-  const token = req.cookies.get(COOKIE_NAME)?.value;
-  if (!token) {
-    return handleUnauthorized(req);
+  
+  // Vérifier si c'est une route admin protégée
+  const isAdminRoute = pathname.startsWith("/admin");
+  const isAdminApiRoute = pathname.startsWith("/api/admin");
+  
+  if (isAdminRoute || isAdminApiRoute) {
+    const token = req.cookies.get(COOKIE_NAME)?.value;
+    
+    if (!token) {
+      // Rediriger vers login uniquement pour les routes admin
+      const url = new URL("/admin/login", req.url);
+      url.searchParams.set("next", pathname);
+      return NextResponse.redirect(url);
+    }
+    
+    const isValid = await isValidAdminToken(token);
+    
+    if (!isValid) {
+      const url = new URL("/admin/login", req.url);
+      url.searchParams.set("next", pathname);
+      return NextResponse.redirect(url);
+    }
   }
-
-  // Verify token
-  const isValid = await isValidAdminToken(token);
-  if (!isValid) {
-    return handleUnauthorized(req);
-  }
-
+  
   return NextResponse.next();
-}
-
-function handleUnauthorized(req: NextRequest) {
-  // For API requests, return 401
-  if (req.nextUrl.pathname.startsWith("/api/")) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  // For page requests, redirect to login
-  const url = req.nextUrl.clone();
-  url.pathname = "/admin/login";
-  url.searchParams.set("next", req.nextUrl.pathname);
-  return NextResponse.redirect(url);
 }
 
 export const config = {
   matcher: ["/admin/:path*", "/api/admin/:path*"],
 };
-
