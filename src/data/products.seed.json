@@ -10,7 +10,7 @@
       "fr": "Grande version du cookie ultra gourmand avec morceaux d'Oreo et cœur crémeux fondant.",
       "ar": "النسخة الكبيرة من الكوكيز الغني بقطع أوريو مع قلب كريمي ذائب."
     },
-    "price": 7.5,
+    "price": 7,
     "image": "/images/cookies/fromage.jpeg",
     "category": "Big",
     "tags": [
@@ -21,7 +21,8 @@
     "inStock": true,
     "featured": false,
     "createdAt": "2026-01-01T00:00:00.000Z",
-    "updatedAt": "2026-01-01T00:00:00.000Z"
+    "updatedAt": "2026-05-11T18:44:00.875Z",
+    "order": 0
   },
   {
     "id": "p_noisette_lover_big",

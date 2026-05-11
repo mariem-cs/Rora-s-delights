@@ -56,6 +56,8 @@ export async function POST(req: Request) {
       ...input,
       createdAt: now,
       updatedAt: now,
+      order: body.order ?? products.length, // Ordre par défaut à la fin
+
     };
     await saveProducts([product, ...products]);
     return NextResponse.json({ product });
