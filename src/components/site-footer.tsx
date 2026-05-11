@@ -20,7 +20,7 @@ export function SiteFooter() {
               aria-label="Suivez-nous sur Instagram"
             >
               <Camera className="h-5 w-5" />
-              <span className="hidden sm:inline">Instagram</span>
+              <span className="hidden sm:inline">Rora's delights</span>
             </Link>
 
             <Link
@@ -31,7 +31,7 @@ export function SiteFooter() {
               aria-label="Suivez-nous sur Facebook"
             >
               <Users className="h-5 w-5" />
-              <span className="hidden sm:inline">Facebook</span>
+              <span className="hidden sm:inline">Rora's delights</span>
             </Link>
 
             <Link
