@@ -25,6 +25,8 @@ export type Product = {
   featured?: boolean;
   createdAt?: string;
   updatedAt?: string;
+  order?: number; // Ajouté pour l'ordre d'affichage
+
 };
 
 export type CartLine = {

@@ -1,28 +1,5 @@
 [
   {
-    "id": "p_noisette_lover_big",
-    "slug": "noisette-lover-big",
-    "name": {
-      "fr": "Noisette Lover (Big)",
-      "ar": "عاشق البندق (كبير)"
-    },
-    "description": {
-      "fr": "Cookie fondant au praliné noisette avec éclats croquants.",
-      "ar": "كوكيز محشو ببرالين البندق مع قطع مقرمشة."
-    },
-    "price": 8,
-    "image": "/images/cookies/noisette.jpeg",
-    "category": "Stuffed",
-    "tags": [
-      "noisette",
-      "praline"
-    ],
-    "inStock": true,
-    "featured": true,
-    "createdAt": "2026-01-01T00:00:00.000Z",
-    "updatedAt": "2026-01-01T00:00:00.000Z"
-  },
-  {
     "id": "p_oreo_creamy_dream_big",
     "slug": "oreo-creamy-dream-big",
     "name": {
@@ -47,6 +24,29 @@
     "updatedAt": "2026-01-01T00:00:00.000Z"
   },
   {
+    "id": "p_noisette_lover_big",
+    "slug": "noisette-lover-big",
+    "name": {
+      "fr": "Noisette Lover (Big)",
+      "ar": "عاشق البندق (كبير)"
+    },
+    "description": {
+      "fr": "Cookie fondant au praliné noisette avec éclats croquants.",
+      "ar": "كوكيز محشو ببرالين البندق مع قطع مقرمشة."
+    },
+    "price": 8,
+    "image": "/images/cookies/noisette.jpeg",
+    "category": "Stuffed",
+    "tags": [
+      "noisette",
+      "praline"
+    ],
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
     "id": "p_orange_lover_big",
     "slug": "orange-lover-big",
     "name": {
@@ -63,6 +63,30 @@
     "tags": [
       "orange",
       "fresh",
+      "big"
+    ],
+    "inStock": true,
+    "featured": false,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "p_chocolate_addict_big",
+    "slug": "chocolate-addict-big",
+    "name": {
+      "fr": "Chocolate Addict (Big)",
+      "ar": "مدمن الشوكولاتة (كبير)"
+    },
+    "description": {
+      "fr": "Grande explosion de chocolat noir, lait et pépites fondantes.",
+      "ar": "النسخة الكبيرة من الانفجار من الشوكولاتة الداكنة والحليب مع قطع ذائبة."
+    },
+    "price": 6,
+    "image": "/images/cookies/chocolat.jpeg",
+    "category": "Big",
+    "tags": [
+      "chocolate",
+      "intense",
       "big"
     ],
     "inStock": true,
@@ -94,6 +118,29 @@
     "updatedAt": "2026-05-11T17:25:34.141Z"
   },
   {
+    "id": "p_oreo_delight",
+    "slug": "oreo-delight",
+    "name": {
+      "fr": "Oreo Delight",
+      "ar": "أوريو ديلايت"
+    },
+    "description": {
+      "fr": "Mini cookies Oreo croustillants et ultra gourmands.",
+      "ar": "ميني كوكيز أوريو مقرمشة وغنية بالطعم."
+    },
+    "price": 2.8,
+    "image": "/images/cookies/oreo.jpeg",
+    "category": "Mini",
+    "tags": [
+      "oreo",
+      "mini"
+    ],
+    "inStock": true,
+    "featured": true,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
     "id": "p_speculoos",
     "slug": "speculoos(big)",
     "name": {
@@ -117,23 +164,22 @@
     "updatedAt": "2026-05-11T17:28:51.010Z"
   },
   {
-    "id": "p_chocolate_addict_big",
-    "slug": "chocolate-addict-big",
+    "id": "p_speculoos",
+    "slug": "speculoos",
     "name": {
-      "fr": "Chocolate Addict (Big)",
-      "ar": "مدمن الشوكولاتة (كبير)"
+      "fr": "Speculoos",
+      "ar": "سبيكولوس"
     },
     "description": {
-      "fr": "Grande explosion de chocolat noir, lait et pépites fondantes.",
-      "ar": "النسخة الكبيرة من الانفجار من الشوكولاتة الداكنة والحليب مع قطع ذائبة."
+      "fr": "Cookie épicé et gourmand au goût irrésistible de spéculoos.",
+      "ar": "كوكيز متبل ولذيذ بنكهة سبيكولوس الشهيرة."
     },
-    "price": 6,
-    "image": "/images/cookies/chocolat.jpeg",
-    "category": "Big",
+    "price": 3.2,
+    "image": "/images/cookies/specelus.jpeg",
+    "category": "Classic",
     "tags": [
-      "chocolate",
-      "intense",
-      "big"
+      "speculoos",
+      "spicy"
     ],
     "inStock": true,
     "featured": false,
@@ -203,52 +249,6 @@
     "tags": [
       "noisette",
       "praline"
-    ],
-    "inStock": true,
-    "featured": true,
-    "createdAt": "2026-01-01T00:00:00.000Z",
-    "updatedAt": "2026-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "p_speculoos",
-    "slug": "speculoos",
-    "name": {
-      "fr": "Speculoos",
-      "ar": "سبيكولوس"
-    },
-    "description": {
-      "fr": "Cookie épicé et gourmand au goût irrésistible de spéculoos.",
-      "ar": "كوكيز متبل ولذيذ بنكهة سبيكولوس الشهيرة."
-    },
-    "price": 3.2,
-    "image": "/images/cookies/specelus.jpeg",
-    "category": "Classic",
-    "tags": [
-      "speculoos",
-      "spicy"
-    ],
-    "inStock": true,
-    "featured": false,
-    "createdAt": "2026-01-01T00:00:00.000Z",
-    "updatedAt": "2026-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "p_oreo_delight",
-    "slug": "oreo-delight",
-    "name": {
-      "fr": "Oreo Delight",
-      "ar": "أوريو ديلايت"
-    },
-    "description": {
-      "fr": "Mini cookies Oreo croustillants et ultra gourmands.",
-      "ar": "ميني كوكيز أوريو مقرمشة وغنية بالطعم."
-    },
-    "price": 2.8,
-    "image": "/images/cookies/oreo.jpeg",
-    "category": "Mini",
-    "tags": [
-      "oreo",
-      "mini"
     ],
     "inStock": true,
     "featured": true,
