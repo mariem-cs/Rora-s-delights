@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { LayoutDashboard, Package, ShoppingCart, LogOut } from "lucide-react";
+import { LayoutDashboard, Package, ShoppingCart, LogOut, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function AdminLayout({
   children,
@@ -11,6 +12,24 @@ export default function AdminLayout({
 }) {
   const pathname = usePathname();
   const router = useRouter();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  // Fermer la sidebar sur mobile quand la route change
+  useEffect(() => {
+    setIsSidebarOpen(false);
+  }, [pathname]);
+
+  // Empêcher le scroll du body quand la sidebar est ouverte sur mobile
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isSidebarOpen]);
 
   const handleLogout = async () => {
     await fetch("/api/admin/logout", { method: "POST" });
@@ -26,46 +45,77 @@ export default function AdminLayout({
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cacao-50 to-creme-50 dark:from-cacao-950 dark:to-creme-950">
-      <div className="flex">
-        {/* Sidebar */}
-        <aside className="w-64 min-h-screen bg-white/80 dark:bg-black/50 backdrop-blur-sm border-r border-cacao-900/10 dark:border-white/10">
-          <div className="p-6">
-            <h1 className="text-xl font-bold">Admin Panel</h1>
-          </div>
-          <nav className="mt-6">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`flex items-center gap-3 px-6 py-3 text-sm transition-colors ${
-                    isActive
-                      ? "bg-caramel-600/10 text-caramel-700 dark:text-caramel-400 border-r-2 border-caramel-600"
-                      : "hover:bg-cacao-900/5 dark:hover:bg-white/5"
-                  }`}
-                >
-                  <Icon className="h-4 w-4" />
-                  {item.label}
-                </Link>
-              );
-            })}
-            <button
-              onClick={handleLogout}
-              className="flex w-full items-center gap-3 px-6 py-3 text-sm text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-900/20 transition-colors"
-            >
-              <LogOut className="h-4 w-4" />
-              Logout
-            </button>
-          </nav>
-        </aside>
+      {/* Overlay pour mobile */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
 
-        {/* Main content */}
-        <main className="flex-1 p-8">
+      {/* Bouton menu mobile */}
+      <button
+        onClick={() => setIsSidebarOpen(true)}
+        className="fixed top-4 left-4 z-50 p-2 rounded-lg bg-white/80 dark:bg-black/50 backdrop-blur-sm shadow-lg lg:hidden"
+      >
+        <Menu className="h-5 w-5" />
+      </button>
+
+      {/* Sidebar - Responsive */}
+      <aside
+        className={`
+          fixed top-0 left-0 z-50 h-full w-64 bg-white/80 dark:bg-black/50 backdrop-blur-sm 
+          border-r border-cacao-900/10 dark:border-white/10 
+          transform transition-transform duration-300 ease-in-out
+          lg:relative lg:translate-x-0
+          ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
+        `}
+      >
+        <div className="p-6 flex items-center justify-between">
+          <h1 className="text-xl font-bold">Admin Panel</h1>
+          <button
+            onClick={() => setIsSidebarOpen(false)}
+            className="p-1 rounded-lg hover:bg-cacao-900/10 lg:hidden"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        <nav className="mt-6">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`flex items-center gap-3 px-6 py-3 text-sm transition-colors ${
+                  isActive
+                    ? "bg-caramel-600/10 text-caramel-700 dark:text-caramel-400 border-r-2 border-caramel-600"
+                    : "hover:bg-cacao-900/5 dark:hover:bg-white/5"
+                }`}
+              >
+                <Icon className="h-4 w-4" />
+                {item.label}
+              </Link>
+            );
+          })}
+          <button
+            onClick={handleLogout}
+            className="flex w-full items-center gap-3 px-6 py-3 text-sm text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-900/20 transition-colors"
+          >
+            <LogOut className="h-4 w-4" />
+            Logout
+          </button>
+        </nav>
+      </aside>
+
+      {/* Main content */}
+      <main className="flex-1 p-4 pt-16 lg:pt-4 lg:p-8 lg:ml-0">
+        <div className="max-w-full overflow-x-auto">
           {children}
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
   );
 }
