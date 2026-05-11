@@ -11,7 +11,10 @@ type OrdersResponse = { orders: Order[] };
 
 const STATUSES: OrderStatus[] = ["pending", "confirmed", "preparing", "ready", "completed", "cancelled"];
 
-const STATUS_CONFIG: Record<OrderStatus, { color: string; icon: React.ComponentType<{ className: string }>; label: string }> = {
+// Définir le type pour les icônes
+type IconComponent = React.ComponentType<{ className?: string }>;
+
+const STATUS_CONFIG: Record<OrderStatus, { color: string; icon: IconComponent; label: string }> = {
   pending: { color: "amber", icon: Clock, label: "Pending" },
   confirmed: { color: "blue", icon: AlertCircle, label: "Confirmed" },
   preparing: { color: "purple", icon: Package, label: "Preparing" },
@@ -261,8 +264,8 @@ export default function AdminOrdersPage() {
                           <div className="border-t border-cacao-900/10 dark:border-white/10 pt-4">
                             <p className="text-xs font-medium text-cacao-900/60 dark:text-creme/60 mb-3">Items</p>
                             <div className="space-y-2">
-                              {o.items.map((it) => (
-                                <div key={it.productId} className="flex items-start justify-between gap-3 text-sm">
+                              {o.items.map((it, idx) => (
+                                <div key={idx} className="flex items-start justify-between gap-3 text-sm">
                                   <div>
                                     <p className="font-medium">{it.name}</p>
                                     <p className="text-xs text-cacao-900/60 dark:text-creme/60">Qty: {it.quantity}</p>
@@ -308,4 +311,3 @@ export default function AdminOrdersPage() {
     </div>
   );
 }
-
