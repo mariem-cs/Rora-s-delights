@@ -2,6 +2,7 @@
 
 import { useState, useTransition, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+export const dynamic = 'force-dynamic';
 
 export default function AdminLoginPage() {
   const router = useRouter();
