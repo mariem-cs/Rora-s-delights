@@ -1,0 +1,358 @@
+[
+  
+  {
+    "id": "p_noisette_lover_big",
+    "slug": "noisette-lover-big",
+    "name": {
+      "fr": "Noisette Lover (Big)",
+      "ar": "عاشق البندق (كبير)"
+    },
+    "description": {
+      "fr": "Cookie fondant au praliné noisette avec éclats croquants.",
+      "ar": "كوكيز محشو ببرالين البندق مع قطع مقرمشة."
+    },
+    "price": 8.00,
+    "image": "/images/cookies/noisette.jpeg",
+    "category": "Stuffed",
+    "tags": ["noisette", "praline"],
+    "inStock": true,
+    "featured": true,
+    "ingredients": {
+      "fr": ["Farine", "Beurre", "Sucre", "Œufs", "Noisettes", "Praliné", "Sel"],
+      "ar": ["طحين", "زبدة", "سكر", "بيض", "بندق", "برالين", "ملح"]
+    },
+    "ratingAvg": 4.8,
+    "ratingCount": 91,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+
+ 
+
+  {
+    "id": "p_oreo_creamy_dream_big",
+    "slug": "oreo-creamy-dream-big",
+    "name": {
+      "fr": "Oreo Creamy Dream (Big)",
+      "ar": "أوريو كريمي دريم (كبير)"
+    },
+    "description": {
+      "fr": "Grande version du cookie ultra gourmand avec morceaux d'Oreo et cœur crémeux fondant.",
+      "ar": "النسخة الكبيرة من الكوكيز الغني بقطع أوريو مع قلب كريمي ذائب."
+    },
+    "price": 7.500,
+    "image": "/images/cookies/fromage.jpeg",
+    "category": "Big",
+    "tags": ["oreo", "creamy", "big"],
+    "inStock": true,
+    "featured": false,
+    "ingredients": {
+      "fr": ["Farine", "Beurre", "Sucre", "Œufs", "Oreo", "Crème vanille", "Sel"],
+      "ar": ["طحين", "زبدة", "سكر", "بيض", "أوريو", "كريمة فانيلا", "ملح"]
+    },
+    "ratingAvg": 4.9,
+    "ratingCount": 120,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+
+  {
+    "id": "p_orange_lover_big",
+    "slug": "orange-lover-big",
+    "name": {
+      "fr": "Orange Lover (Big)",
+      "ar": "عاشق البرتقال (كبير)"
+    },
+    "description": {
+      "fr": "Grande version du cookie parfumé à l'orange avec une touche fraîche et fruitée.",
+      "ar": "النسخة الكبيرة من الكوكيز بنكهة البرتقال المنعشة والفواكه."
+    },
+    "price": 6.00,
+    "image": "/images/cookies/orange.jpeg",
+    "category": "Big",
+    "tags": ["orange", "fresh", "big"],
+    "inStock": true,
+    "featured": false,
+    "ingredients": {
+      "fr": ["Farine", "Beurre", "Sucre", "Œufs", "Orange", "Vanille", "Sel"],
+      "ar": ["طحين", "زبدة", "سكر", "بيض", "برتقال", "فانيلا", "ملح"]
+    },
+    "ratingAvg": 4.7,
+    "ratingCount": 85,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+{
+    "id": "p_oreo_delight",
+    "slug": "oreo-delight",
+    "name": {
+      "fr": "Oreo Delight(Big)",
+      "ar": "أوريو ديلايت(كبير)"
+    },
+    "description": {
+      "fr": "Big cookies Oreo croustillants et ultra gourmands.",
+      "ar": "كوكيز أوريو كبيرة مقرمشة وغنية بالطعم."
+    },
+    "price": 6.50,
+    "image": "/images/cookies/oreo.jpeg",
+    "category": "Big",
+    "tags": ["oreo", "big"],
+    "inStock": true,
+    "featured": true,
+    "ingredients": {
+      "fr": [
+        "Farine",
+        "Beurre",
+        "Sucre",
+        "Œufs",
+        "Oreo",
+        "Chocolat blanc",
+        "Sel"
+      ],
+      "ar": [
+        "طحين",
+        "زبدة",
+        "سكر",
+        "بيض",
+        "أوريو",
+        "شوكولاتة بيضاء",
+        "ملح"
+      ]
+    },
+    "ratingAvg": 4.9,
+    "ratingCount": 110,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+
+    {
+    "id": "p_speculoos",
+    "slug": "speculoos(big)",
+    "name": {
+      "fr": "Speculoos",
+      "ar": "سبيكولوس"
+    },
+    "description": {
+      "fr": "Cookie épicé et gourmand au goût irrésistible de spéculoos.",
+      "ar": "كوكيز متبل ولذيذ بنكهة سبيكولوس الشهيرة."
+    },
+    "price": 7.000,
+    "image": "/images/cookies/specelus.jpeg",
+    "category": "Classic",
+    "tags": ["speculoos", "spicy"],
+    "inStock": true,
+    "featured": false,
+    "ingredients": {
+      "fr": ["Farine", "Beurre", "Sucre", "Œufs", "Speculoos", "Cannelle", "Sel"],
+      "ar": ["طحين", "زبدة", "سكر", "بيض", "سبيكولوس", "قرفة", "ملح"]
+    },
+    "ratingAvg": 4.7,
+    "ratingCount": 77,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "p_chocolate_addict_big",
+    "slug": "chocolate-addict-big",
+    "name": {
+      "fr": "Chocolate Addict (Big)",
+      "ar": "مدمن الشوكولاتة (كبير)"
+    },
+    "description": {
+      "fr": "Grande explosion de chocolat noir, lait et pépites fondantes.",
+      "ar": "النسخة الكبيرة من الانفجار من الشوكولاتة الداكنة والحليب مع قطع ذائبة."
+    },
+    "price": 6.00,
+    "image": "/images/cookies/chocolat.jpeg",
+    "category": "Big",
+    "tags": ["chocolate", "intense", "big"],
+    "inStock": true,
+    "featured": false,
+    "ingredients": {
+      "fr": ["Farine", "Beurre", "Sucre", "Cacao", "Œufs", "Chocolat noir", "Chocolat lait", "Sel"],
+      "ar": ["طحين", "زبدة", "سكر", "كاكاو", "بيض", "شوكولاتة داكنة", "شوكولاتة بالحليب", "ملح"]
+    },
+    "ratingAvg": 5.0,
+    "ratingCount": 150,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+    {
+    "id": "p_oreo_creamy_dream",
+    "slug": "oreo-creamy-dream",
+    "name": {
+      "fr": "Oreo Creamy Dream",
+      "ar": "أوريو كريمي دريم"
+    },
+    "description": {
+      "fr": "Cookie ultra gourmand avec morceaux d’Oreo et cœur crémeux fondant.",
+      "ar": "كوكيز غني بقطع أوريو مع قلب كريمي ذائب."
+    },
+    "price": 3.500,
+    "image": "/images/cookies/fromage.jpeg",
+    "category": "Special",
+    "tags": ["oreo", "creamy"],
+    "inStock": true,
+    "featured": true,
+    "ingredients": {
+      "fr": ["Farine", "Beurre", "Sucre", "Œufs", "Oreo", "Crème vanille", "Sel"],
+      "ar": ["طحين", "زبدة", "سكر", "بيض", "أوريو", "كريمة فانيلا", "ملح"]
+    },
+    "ratingAvg": 4.9,
+    "ratingCount": 120,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+
+  {
+    "id": "p_orange_lover",
+    "slug": "orange-lover",
+    "name": {
+      "fr": "Orange Lover",
+      "ar": "عاشق البرتقال"
+    },
+    "description": {
+      "fr": "Cookie parfumé à l’orange avec une touche fraîche et fruitée.",
+      "ar": "كوكيز بنكهة البرتقال المنعشة والفواكه."
+    },
+    "price": 3.000,
+    "image": "/images/cookies/orange.jpeg",
+    "category": "Seasonal",
+    "tags": ["orange", "fresh"],
+    "inStock": true,
+    "featured": false,
+    "ingredients": {
+      "fr": ["Farine", "Beurre", "Sucre", "Œufs", "Orange", "Vanille", "Sel"],
+      "ar": ["طحين", "زبدة", "سكر", "بيض", "برتقال", "فانيلا", "ملح"]
+    },
+    "ratingAvg": 4.7,
+    "ratingCount": 64,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+
+  {
+    "id": "p_noisette_lover",
+    "slug": "noisette-lover",
+    "name": {
+      "fr": "Noisette Lover",
+      "ar": "عاشق البندق"
+    },
+    "description": {
+      "fr": "Cookie fondant au praliné noisette avec éclats croquants.",
+      "ar": "كوكيز محشو ببرالين البندق مع قطع مقرمشة."
+    },
+    "price": 3.6,
+    "image": "/images/cookies/noisette.jpeg",
+    "category": "Stuffed",
+    "tags": ["noisette", "praline"],
+    "inStock": true,
+    "featured": true,
+    "ingredients": {
+      "fr": ["Farine", "Beurre", "Sucre", "Œufs", "Noisettes", "Praliné", "Sel"],
+      "ar": ["طحين", "زبدة", "سكر", "بيض", "بندق", "برالين", "ملح"]
+    },
+    "ratingAvg": 4.8,
+    "ratingCount": 91,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+
+  {
+    "id": "p_speculoos",
+    "slug": "speculoos",
+    "name": {
+      "fr": "Speculoos",
+      "ar": "سبيكولوس"
+    },
+    "description": {
+      "fr": "Cookie épicé et gourmand au goût irrésistible de spéculoos.",
+      "ar": "كوكيز متبل ولذيذ بنكهة سبيكولوس الشهيرة."
+    },
+    "price": 3.200,
+    "image": "/images/cookies/specelus.jpeg",
+    "category": "Classic",
+    "tags": ["speculoos", "spicy"],
+    "inStock": true,
+    "featured": false,
+    "ingredients": {
+      "fr": ["Farine", "Beurre", "Sucre", "Œufs", "Speculoos", "Cannelle", "Sel"],
+      "ar": ["طحين", "زبدة", "سكر", "بيض", "سبيكولوس", "قرفة", "ملح"]
+    },
+    "ratingAvg": 4.7,
+    "ratingCount": 77,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+
+  {
+    "id": "p_chocolate_addict",
+    "slug": "chocolate-addict",
+    "name": {
+      "fr": "Chocolate Addict",
+      "ar": "مدمن الشوكولاتة"
+    },
+    "description": {
+      "fr": "Explosion de chocolat noir, lait et pépites fondantes.",
+      "ar": "انفجار من الشوكولاتة الداكنة والحليب مع قطع ذائبة."
+    },
+    "price": 3.700,
+    "image": "/images/cookies/chocolat.jpeg",
+    "category": "Chocolate",
+    "tags": ["chocolate", "intense"],
+    "inStock": true,
+    "featured": true,
+    "ingredients": {
+      "fr": ["Farine", "Beurre", "Sucre", "Cacao", "Œufs", "Chocolat noir", "Chocolat lait", "Sel"],
+      "ar": ["طحين", "زبدة", "سكر", "كاكاو", "بيض", "شوكولاتة داكنة", "شوكولاتة بالحليب", "ملح"]
+    },
+    "ratingAvg": 5.0,
+    "ratingCount": 150,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  },
+   {
+    "id": "p_oreo_delight",
+    "slug": "oreo-delight",
+    "name": {
+      "fr": "Oreo Delight",
+      "ar": "أوريو ديلايت"
+    },
+    "description": {
+      "fr": "Mini cookies Oreo croustillants et ultra gourmands.",
+      "ar": "ميني كوكيز أوريو مقرمشة وغنية بالطعم."
+    },
+    "price": 2.800,
+    "image": "/images/cookies/oreo.jpeg",
+    "category": "Mini",
+    "tags": ["oreo", "mini"],
+    "inStock": true,
+    "featured": true,
+    "ingredients": {
+      "fr": [
+        "Farine",
+        "Beurre",
+        "Sucre",
+        "Œufs",
+        "Oreo",
+        "Chocolat blanc",
+        "Sel"
+      ],
+      "ar": [
+        "طحين",
+        "زبدة",
+        "سكر",
+        "بيض",
+        "أوريو",
+        "شوكولاتة بيضاء",
+        "ملح"
+      ]
+    },
+    "ratingAvg": 4.9,
+    "ratingCount": 110,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z"
+  }
+
+  
+]

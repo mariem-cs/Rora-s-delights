@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="0.5" stop-color="#a26f5c"/>
+      <stop offset="1" stop-color="#3d261f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g transform="translate(260 220)">
+    <rect x="0" y="0" width="680" height="380" rx="42" fill="#3d261f" opacity="0.92"/>
+    <rect x="32" y="32" width="616" height="316" rx="36" fill="#6f4334" opacity="0.9"/>
+    <path d="M80 220 C180 180, 260 260, 360 220 S 560 240, 600 210" stroke="#fff9f1" stroke-width="18" opacity="0.55" fill="none"/>
+  </g>
+  <text x="50%" y="90%" text-anchor="middle" font-family="ui-sans-serif, system-ui" font-size="46" fill="#fff9f1" opacity="0.95">
+    Brownie
+  </text>
+</svg>
+

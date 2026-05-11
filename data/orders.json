@@ -1,0 +1,26 @@
+[
+  {
+    "id": "aa94b346-2d63-4941-8221-2c7fb54dfb4c",
+    "createdAt": "2026-05-11T03:38:04.012Z",
+    "status": "pending",
+    "locale": "fr",
+    "customer": {
+      "name": "mariem",
+      "phone": "28204894",
+      "address": "Marsa, Tunis"
+    },
+    "items": [
+      {
+        "productId": "p_oreo_creamy_dream_big",
+        "name": "Oreo Creamy Dream (Big)",
+        "unitPrice": 7.5,
+        "quantity": 1,
+        "lineTotal": 7.5
+      }
+    ],
+    "totals": {
+      "items": 7.5,
+      "grandTotal": 7.5
+    }
+  }
+]
