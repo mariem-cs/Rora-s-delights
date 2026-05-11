@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { getProducts, saveProducts } from "@/lib/products";
+import { requireAdminFromCookies } from "@/lib/admin-auth";
 
 const updateSchema = z
   .object({
@@ -18,6 +19,11 @@ const updateSchema = z
   .strict();
 
 export async function PUT(req: Request, { params }: { params: { id: string } }) {
+  const admin = await requireAdminFromCookies();
+  if (!admin) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
     const body = await req.json();
     const patch = updateSchema.parse(body);
@@ -41,6 +47,11 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
 }
 
 export async function DELETE(_req: Request, { params }: { params: { id: string } }) {
+  const admin = await requireAdminFromCookies();
+  if (!admin) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
     const products = await getProducts();
     const next = products.filter((p) => p.id !== params.id);

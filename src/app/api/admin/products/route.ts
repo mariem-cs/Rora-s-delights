@@ -4,6 +4,7 @@ import crypto from "node:crypto";
 import { z } from "zod";
 
 import { getProducts, saveProducts } from "@/lib/products";
+import { requireAdminFromCookies } from "@/lib/admin-auth";
 
 const productInputSchema = z.object({
   slug: z.string().min(1),
@@ -18,11 +19,21 @@ const productInputSchema = z.object({
 });
 
 export async function GET() {
+  const admin = await requireAdminFromCookies();
+  if (!admin) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const products = await getProducts();
   return NextResponse.json({ products });
 }
 
 export async function POST(req: Request) {
+  const admin = await requireAdminFromCookies();
+  if (!admin) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
     const body = await req.json();
     const input = productInputSchema.parse(body);
