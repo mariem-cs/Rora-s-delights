@@ -12,14 +12,14 @@ export function HomeClient({ featured }: { featured: Product[] }) {
   const tr = t(locale);
 
   return (
-    <div className="container-page py-10 sm:py-14">
-      <section className="card overflow-hidden p-8 sm:p-12">
-        <div className="max-w-2xl">
-          <h1 className="text-3xl font-semibold tracking-tight text-cacao-900 dark:text-creme sm:text-5xl">
+    <div className="container-page py-6 sm:py-10 md:py-14">
+      <section className="card overflow-hidden p-6 sm:p-8 md:p-12 bg-gradient-to-br from-caramel-50 via-white to-creme dark:from-cacao-900/30 dark:via-cacao-900/20 dark:to-cacao-900/10">
+        <div className="max-w-3xl">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-cacao-900 dark:text-creme leading-tight">
             {tr.home.heroTitle}
           </h1>
-          <p className="mt-4 text-base text-cacao-900/70 dark:text-creme/70 sm:text-lg">{tr.home.heroSubtitle}</p>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-cacao-900/70 dark:text-creme/70 leading-relaxed">{tr.home.heroSubtitle}</p>
+          <div className="mt-6 sm:mt-8 flex flex-col gap-2 sm:gap-3 sm:flex-row">
             <Link className="btn-primary" href="/products">
               {tr.nav.products}
             </Link>
@@ -30,14 +30,14 @@ export function HomeClient({ featured }: { featured: Product[] }) {
         </div>
       </section>
 
-      <section className="mt-10">
-        <div className="mb-4 flex items-end justify-between gap-3">
-          <h2 className="text-xl font-semibold tracking-tight">{tr.home.featured}</h2>
-          <Link className="text-sm font-medium hover:underline" href="/products">
+      <section className="mt-8 sm:mt-12 md:mt-14">
+        <div className="mb-6 sm:mb-8 flex items-center justify-between gap-3">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-cacao-900 dark:text-creme">{tr.home.featured}</h2>
+          <Link className="text-xs sm:text-sm font-medium text-caramel-600 dark:text-caramel-400 hover:underline transition-colors" href="/products">
             {tr.actions.view}
           </Link>
         </div>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}

@@ -42,17 +42,17 @@ export function ProductsPageClient({ products: initialProducts }: { products: Pr
   }, []);
 
   return (
-    <div className="container-page py-10">
-      <div className="mb-6 flex justify-between items-center">
-        <h1 className="text-3xl font-bold">
+    <div className="container-page py-6 sm:py-10 md:py-14">
+      <div className="mb-6 sm:mb-8 flex justify-between items-center gap-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cacao-900 dark:text-creme">
           {locale === "fr" ? "Nos Cookies" : "الكوكيز لدينا"}
         </h1>
         {loading && (
-          <span className="text-sm text-gray-500 animate-pulse">Mise à jour...</span>
+          <span className="text-xs sm:text-sm text-cacao-900/60 dark:text-creme/60 animate-pulse">Mise à jour...</span>
         )}
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
