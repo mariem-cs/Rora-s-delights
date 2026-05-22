@@ -36,7 +36,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
   return (
     <div className="container-page py-10">
-      <Link className="text-sm font-medium hover:underline" href="/products">
+      <Link className="text-xs sm:text-sm font-medium text-cacao-700 hover:text-cacao-900 dark:text-creme/70 dark:hover:text-creme hover:underline transition-colors" href="/products">
         ← {tr.actions.back}
       </Link>
 
@@ -48,15 +48,15 @@ export function ProductDetailClient({ product }: { product: Product }) {
         </div>
 
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight">{product.name[locale]}</h1>
-          <p className="mt-2 text-cacao-900/70 dark:text-creme/70">{product.category}</p>
-          <p className="mt-4 text-lg font-semibold">{formatPriceTND(product.price, locale)}</p>
+          <h1 className="text-3xl font-semibold tracking-tight text-cacao-900 dark:text-creme">{product.name[locale]}</h1>
+          <p className="mt-2 text-cacao-800 dark:text-creme/70">{product.category}</p>
+          <p className="mt-4 text-lg font-semibold text-caramel-600">{formatPriceTND(product.price, locale)}</p>
 
-          <p className="mt-6 leading-7 text-cacao-900/80 dark:text-creme/80">{product.description[locale]}</p>
+          <p className="mt-6 leading-7 text-cacao-800 dark:text-creme/80">{product.description[locale]}</p>
 
           {/* Quantity Selection */}
           <div className="mt-6">
-            <h3 className="text-sm font-medium mb-3">
+            <h3 className="text-sm font-medium text-cacao-900 dark:text-creme mb-3">
               {locale === "fr" ? "Quantité :" : "الكمية :"}
             </h3>
             <div className="flex items-center gap-3">

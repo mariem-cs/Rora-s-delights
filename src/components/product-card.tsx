@@ -48,7 +48,7 @@ export function ProductCard({ product }: { product: Product }) {
             <Link href={`/products/${product.slug}`} className="font-semibold text-sm sm:text-base tracking-tight hover:underline line-clamp-2 text-cacao-900 dark:text-creme">
               {product.name[locale]}
             </Link>
-            <p className="text-xs sm:text-sm text-cacao-900/60 dark:text-creme/60 mt-0.5 sm:mt-1">
+            <p className="text-xs sm:text-sm text-cacao-800 dark:text-creme/60 mt-0.5 sm:mt-1">
               {product.category}
             </p>
           </div>
@@ -80,7 +80,7 @@ export function ProductCard({ product }: { product: Product }) {
           )}
         </div>
 
-        <p className="text-xs sm:text-sm text-cacao-900/70 dark:text-creme/70 line-clamp-2">
+        <p className="text-xs sm:text-sm text-cacao-800 dark:text-creme/70 line-clamp-2">
           {product.description[locale]}
         </p>
 

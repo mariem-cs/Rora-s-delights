@@ -48,7 +48,7 @@ export function ProductsPageClient({ products: initialProducts }: { products: Pr
           {locale === "fr" ? "Nos Cookies" : "الكوكيز لدينا"}
         </h1>
         {loading && (
-          <span className="text-xs sm:text-sm text-cacao-900/60 dark:text-creme/60 animate-pulse">Mise à jour...</span>
+          <span className="text-xs sm:text-sm text-cacao-700 dark:text-creme/60 animate-pulse">Mise à jour...</span>
         )}
       </div>
       

@@ -64,7 +64,7 @@ export function CheckoutPageClient({ products }: { products: Product[] }) {
     return (
       <div className="container-page py-6 sm:py-10">
         <div className="card p-6 sm:p-8 text-center">
-          <p className="text-sm sm:text-base text-cacao-900/70 dark:text-creme/70">{tr.cart.empty}</p>
+          <p className="text-sm sm:text-base text-cacao-800 dark:text-creme/70">{tr.cart.empty}</p>
           <div className="mt-6">
             <Link className="btn-primary" href="/products">
               {tr.actions.continueShopping}
@@ -84,9 +84,9 @@ export function CheckoutPageClient({ products }: { products: Product[] }) {
           <h2 className="text-base sm:text-lg font-bold text-cacao-900 dark:text-creme">{tr.checkout.customer}</h2>
           <div className="mt-4 grid grid-cols-1 gap-3 sm:gap-4">
             <label className="text-xs sm:text-sm">
-              <span className="block text-cacao-900/70 dark:text-creme/70 font-medium mb-1.5">{tr.checkout.name}</span>
+              <span className="block text-cacao-800 dark:text-creme/70 font-medium mb-1.5">{tr.checkout.name}</span>
               <input
-                className="w-full rounded-lg border border-cacao-900/15 dark:border-white/15 bg-white/70 dark:bg-cacao-900/20 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm placeholder-cacao-900/40 dark:placeholder-creme/40 outline-none focus:ring-2 focus:ring-caramel-400 dark:focus:ring-caramel-300 transition-all"
+                className="w-full rounded-lg border border-cacao-800/20 dark:border-white/15 bg-white dark:bg-cacao-900/20 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-cacao-900 dark:text-creme placeholder-cacao-700/50 dark:placeholder-creme/40 outline-none focus:ring-2 focus:ring-caramel-400 dark:focus:ring-caramel-300 transition-all"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Votre nom"
@@ -94,9 +94,9 @@ export function CheckoutPageClient({ products }: { products: Product[] }) {
               />
             </label>
             <label className="text-xs sm:text-sm">
-              <span className="block text-cacao-900/70 dark:text-creme/70 font-medium mb-1.5">{tr.checkout.phone}</span>
+              <span className="block text-cacao-800 dark:text-creme/70 font-medium mb-1.5">{tr.checkout.phone}</span>
               <input
-                className="w-full rounded-lg border border-cacao-900/15 dark:border-white/15 bg-white/70 dark:bg-cacao-900/20 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm placeholder-cacao-900/40 dark:placeholder-creme/40 outline-none focus:ring-2 focus:ring-caramel-400 dark:focus:ring-caramel-300 transition-all"
+                className="w-full rounded-lg border border-cacao-800/20 dark:border-white/15 bg-white dark:bg-cacao-900/20 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-cacao-900 dark:text-creme placeholder-cacao-700/50 dark:placeholder-creme/40 outline-none focus:ring-2 focus:ring-caramel-400 dark:focus:ring-caramel-300 transition-all"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Votre téléphone"
@@ -104,9 +104,9 @@ export function CheckoutPageClient({ products }: { products: Product[] }) {
               />
             </label>
             <label className="text-xs sm:text-sm">
-              <span className="block text-cacao-900/70 dark:text-creme/70 font-medium mb-1.5">{tr.checkout.address}</span>
+              <span className="block text-cacao-800 dark:text-creme/70 font-medium mb-1.5">{tr.checkout.address}</span>
               <textarea
-                className="w-full rounded-lg border border-cacao-900/15 dark:border-white/15 bg-white/70 dark:bg-cacao-900/20 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm placeholder-cacao-900/40 dark:placeholder-creme/40 outline-none focus:ring-2 focus:ring-caramel-400 dark:focus:ring-caramel-300 transition-all resize-none"
+                className="w-full rounded-lg border border-cacao-800/20 dark:border-white/15 bg-white dark:bg-cacao-900/20 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-cacao-900 dark:text-creme placeholder-cacao-700/50 dark:placeholder-creme/40 outline-none focus:ring-2 focus:ring-caramel-400 dark:focus:ring-caramel-300 transition-all resize-none"
                 rows={3}
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
@@ -115,9 +115,9 @@ export function CheckoutPageClient({ products }: { products: Product[] }) {
               />
             </label>
             <label className="text-xs sm:text-sm">
-              <span className="block text-cacao-900/70 dark:text-creme/70 font-medium mb-1.5">{tr.checkout.notes}</span>
+              <span className="block text-cacao-800 dark:text-creme/70 font-medium mb-1.5">{tr.checkout.notes}</span>
               <textarea
-                className="w-full rounded-lg border border-cacao-900/15 dark:border-white/15 bg-white/70 dark:bg-cacao-900/20 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm placeholder-cacao-900/40 dark:placeholder-creme/40 outline-none focus:ring-2 focus:ring-caramel-400 dark:focus:ring-caramel-300 transition-all resize-none"
+                className="w-full rounded-lg border border-cacao-800/20 dark:border-white/15 bg-white dark:bg-cacao-900/20 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-cacao-900 dark:text-creme placeholder-cacao-700/50 dark:placeholder-creme/40 outline-none focus:ring-2 focus:ring-caramel-400 dark:focus:ring-caramel-300 transition-all resize-none"
                 rows={2}
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
@@ -131,7 +131,7 @@ export function CheckoutPageClient({ products }: { products: Product[] }) {
           <button className="btn-primary mt-6 w-full justify-center text-xs sm:text-sm" type="button" disabled={pending} onClick={placeOrder}>
             {pending ? "..." : tr.checkout.placeOrder}
           </button>
-          <p className="mt-3 text-[10px] sm:text-xs text-cacao-900/60 dark:text-creme/60">
+          <p className="mt-3 text-[10px] sm:text-xs text-cacao-700 dark:text-creme/60">
             {tr.actions.payOnDelivery}
           </p>
         </div>
@@ -143,7 +143,7 @@ export function CheckoutPageClient({ products }: { products: Product[] }) {
               <div key={l.product.id} className="flex items-start justify-between gap-2">
                 <div className="min-w-0">
                   <p className="font-medium text-cacao-900 dark:text-creme line-clamp-1">{l.product.name[locale]}</p>
-                  <p className="text-cacao-900/70 dark:text-creme/70 text-[10px] sm:text-xs">
+                  <p className="text-cacao-700 dark:text-creme/70 text-[10px] sm:text-xs">
                     {l.quantity} × {formatPriceTND(l.product.price, locale)}
                   </p>
                 </div>
@@ -153,7 +153,7 @@ export function CheckoutPageClient({ products }: { products: Product[] }) {
           </div>
           <div className="mt-4 border-t border-cacao-900/10 dark:border-white/10 pt-3">
             <div className="flex items-center justify-between font-bold text-sm sm:text-base">
-              <span>{tr.cart.total}</span>
+              <span className="text-cacao-900 dark:text-creme">{tr.cart.total}</span>
               <span className="text-caramel-600">{formatPriceTND(total, locale)}</span>
             </div>
           </div>

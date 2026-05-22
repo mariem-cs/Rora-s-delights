@@ -46,7 +46,7 @@ export function SiteFooter() {
             </Link>
           </div>
 
-          <div className="flex flex-col items-center justify-between gap-3 text-center text-xs sm:text-sm text-cacao-900/70 dark:text-creme/70 w-full sm:flex-row">
+          <div className="flex flex-col items-center justify-between gap-3 text-center text-xs sm:text-sm text-cacao-800 dark:text-creme/70 w-full sm:flex-row">
             <p>© {new Date().getFullYear()} Rora's Delights. Tous droits réservés.</p>
             <div className="flex items-center gap-4">
               <Link className="hover:underline hover:text-cacao-900 dark:hover:text-creme transition-colors" href="/admin">

@@ -18,7 +18,7 @@ export function HomeClient({ featured }: { featured: Product[] }) {
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-cacao-900 dark:text-creme leading-tight">
             {tr.home.heroTitle}
           </h1>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-cacao-900/70 dark:text-creme/70 leading-relaxed">{tr.home.heroSubtitle}</p>
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-cacao-800 dark:text-creme/70 leading-relaxed">{tr.home.heroSubtitle}</p>
           <div className="mt-6 sm:mt-8 flex flex-col gap-2 sm:gap-3 sm:flex-row">
             <Link className="btn-primary" href="/products">
               {tr.nav.products}

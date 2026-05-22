@@ -14,24 +14,23 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "No file provided" }, { status: 400 });
     }
     
-    // Vérifier le type de fichier
-    const validTypes = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
-    if (!validTypes.includes(file.type)) {
-      return NextResponse.json({ error: "Invalid file type. Use JPEG, PNG or WEBP" }, { status: 400 });
+    // Accept any image format - no file type restrictions
+    // Check if it's an image by MIME type prefix
+    if (!file.type.startsWith('image/')) {
+      return NextResponse.json({ error: "File must be an image" }, { status: 400 });
     }
     
-    // Vérifier la taille (max 5MB)
-    if (file.size > 5 * 1024 * 1024) {
-      return NextResponse.json({ error: "File too large. Max 5MB" }, { status: 400 });
+    // Increase file size limit to 20MB for better quality images
+    const maxSize = 20 * 1024 * 1024; // 20MB
+    if (file.size > maxSize) {
+      return NextResponse.json({ error: `File too large. Max ${maxSize / 1024 / 1024}MB` }, { status: 400 });
     }
     
     // Générer un nom unique
     const timestamp = Date.now();
+    const randomStr = Math.random().toString(36).substring(2, 8);
     const safeName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
-    const filename = `${timestamp}-${safeName}`;
-    
-    // Sur Vercel, on ne peut pas écrire dans le filesystem
-    // Donc on utilise une approche alternative
+    const filename = `${timestamp}-${randomStr}-${safeName}`;
     
     // Convertir l'image en base64 pour stockage temporaire
     const bytes = await file.arrayBuffer();
@@ -40,19 +39,25 @@ export async function POST(request: Request) {
     const mimeType = file.type;
     const dataUrl = `data:${mimeType};base64,${base64}`;
     
+    // Log upload info
+    console.log(`Image uploaded: ${filename}, Type: ${file.type}, Size: ${(file.size / 1024).toFixed(2)}KB`);
+    
     // Retourner l'image en base64
     // Pour Vercel, on va stocker l'image en base64 dans le produit
-    // Tu pourras la convertir en fichier plus tard ou utiliser un service comme Cloudinary
+    // On peut aussi utiliser un service comme Cloudinary, Supabase Storage, ou AWS S3
     
     return NextResponse.json({ 
       success: true, 
       url: dataUrl,
-      // Alternative: Utiliser un service gratuit comme Cloudinary
-      // Pour l'instant, on retourne l'image en base64
+      filename: filename,
+      type: file.type,
+      size: file.size
     });
     
   } catch (error) {
     console.error("Upload error:", error);
-    return NextResponse.json({ error: "Upload failed" }, { status: 500 });
+    return NextResponse.json({ 
+      error: error instanceof Error ? error.message : "Upload failed" 
+    }, { status: 500 });
   }
 }

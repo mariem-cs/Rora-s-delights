@@ -34,7 +34,7 @@ export function CartPageClient({ products }: { products: Product[] }) {
 
       {lines.length === 0 ? (
         <div className="mt-6 card p-6 sm:p-8 text-center">
-          <p className="text-sm sm:text-base text-cacao-900/70 dark:text-creme/70">{tr.cart.empty}</p>
+          <p className="text-sm sm:text-base text-cacao-800 dark:text-creme/70">{tr.cart.empty}</p>
           <div className="mt-6">
             <Link className="btn-primary" href="/products">
               {tr.actions.continueShopping}
@@ -45,7 +45,7 @@ export function CartPageClient({ products }: { products: Product[] }) {
         <div className="mt-6 grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-[1fr_320px]">
           <div className="card p-4 sm:p-6 overflow-x-auto">
             <div className="flex items-center justify-between gap-3">
-              <p className="text-xs sm:text-sm text-cacao-900/70 dark:text-creme/70">{lines.length} items</p>
+              <p className="text-xs sm:text-sm text-cacao-700 dark:text-creme/70">{lines.length} items</p>
               <button className="text-xs sm:text-sm font-medium text-caramel-600 dark:text-caramel-400 hover:underline transition-colors" onClick={clear} type="button">
                 {tr.actions.clear}
               </button>
@@ -65,7 +65,7 @@ export function CartPageClient({ products }: { products: Product[] }) {
                       <p className="font-semibold text-sm sm:text-base text-caramel-600 flex-shrink-0">{formatPriceTND(line.lineTotal, locale)}</p>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                      <label className="text-xs sm:text-sm text-cacao-900/70 dark:text-creme/70 flex items-center gap-1">
+                      <label className="text-xs sm:text-sm text-cacao-700 dark:text-creme/70 flex items-center gap-1">
                         Qty:
                         <input
                           className="w-14 sm:w-16 rounded-lg border border-cacao-900/15 dark:border-white/15 bg-white/70 dark:bg-cacao-900/20 px-2 py-1.5 text-xs sm:text-sm"
@@ -88,16 +88,16 @@ export function CartPageClient({ products }: { products: Product[] }) {
           <aside className="card p-4 sm:p-6 h-fit sticky top-24 sm:top-24">
             <h2 className="text-base sm:text-lg font-bold text-cacao-900 dark:text-creme">{tr.cart.total}</h2>
             <div className="mt-4 space-y-2">
-              <div className="flex items-center justify-between text-xs sm:text-sm text-cacao-900/70 dark:text-creme/70">
+              <div className="flex items-center justify-between text-xs sm:text-sm text-cacao-700 dark:text-creme/70">
                 <span>{tr.cart.subtotal}</span>
                 <span>{formatPriceTND(total, locale)}</span>
               </div>
               <div className="border-t border-cacao-900/10 dark:border-white/10 pt-2 flex items-center justify-between text-sm sm:text-base font-bold">
-                <span>{tr.cart.total}</span>
+                <span className="text-cacao-900 dark:text-creme">{tr.cart.total}</span>
                 <span className="text-caramel-600">{formatPriceTND(total, locale)}</span>
               </div>
             </div>
-            <p className="mt-3 text-[10px] sm:text-xs text-cacao-900/60 dark:text-creme/60">{tr.actions.payOnDelivery}</p>
+            <p className="mt-3 text-[10px] sm:text-xs text-cacao-700 dark:text-creme/60">{tr.actions.payOnDelivery}</p>
             <Link className="btn-primary mt-6 w-full justify-center text-xs sm:text-sm" href="/checkout">
               {tr.actions.checkout}
             </Link>
